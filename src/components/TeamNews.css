@@ -1,0 +1,547 @@
+
+.team-news-container  {
+    display: flex;
+    z-index: 10;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: var(--secondary);
+    box-shadow: inset 0px 0px 40px -10px rgba(0,0,0,0.23);
+}
+
+.team-news-container .close-screen {
+    position: absolute;
+    top: 5vh;
+    right: 5vw;
+    background-color: transparent;
+    border: none;
+    font-size: 3.5vw;
+    cursor: pointer;
+    color: var(--primary);
+    z-index: 1;
+}
+
+.team-news-container .close-screen:hover {
+    transform: scale(1.1);
+    transition: 0.2s ease-out;
+}
+
+.teams-container {
+    display: flex;
+    width: 90%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+    margin-left: 10vw;
+}
+
+.home-team-container,
+.away-team-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: center;
+}
+
+.home-team-container button,
+.away-team-container button {
+    padding: 6px;
+    margin: 6px;
+} 
+
+.home-team-container input,
+.away-team-container input {
+    padding: 6px;
+    margin: 6px;
+    padding-left: 12px;
+}
+
+.home-team-container h4,
+.away-team-container h4 {
+    font-size: 5vw;
+    color: var(--primary);
+    padding-left: 3vw;
+}
+
+.home-team-container ul,
+.away-team-container ul {
+    list-style-type: none;
+    align-items: flex-start;
+} 
+
+.home-team-container li,
+.away-team-container li {
+    font-size: 2.4vw;
+    background-color: transparent;
+    border: none;
+    color: var(--primary);
+    padding-left: 6px;
+
+}
+
+.home-team-container .batting-icon,
+.away-team-container .batting-icon {
+    color: var(--primary);
+    font-size: 3vw;
+}
+
+.home-team-name,
+.away-team-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
+.team-news-btns {
+    position: absolute;
+    top: 50%;
+    margin-top: -38vh;
+    left: -2vw;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 76vh;
+    justify-content: center;
+    gap: 1vh;
+}
+
+.mobile-left,
+.mobile-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-left button,
+.mobile-right button {
+    margin: 1vh;
+}
+
+.team-news-btns .skew-box,
+.team-news-btns .skew-box-alt {
+    border: 2px solid var(--button);
+    transform: skewX(-15deg);
+    border-right: 10px solid var(--button);
+    cursor: pointer;
+    padding: 5px;
+    width: 90%;
+}
+
+.team-news-btns .skew-box:hover,
+.team-news-btns .skew-box-alt:hover {
+    transform: skewX(0deg);
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+}
+
+.team-news-btns .skew-text {
+    display: block;
+    transform: skewX(15deg);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2vw;
+    width: 100%;
+    height: 100%;
+}
+
+.team-news-btns .skew-text:hover {
+    transform: skewX(0deg);
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+}
+
+.player-column button,
+.edit-name-overlay,
+.away-team-addPlayers,
+.home-team-addPlayers,
+.change-team-name,
+.change-venue,
+.change-format,
+.change-toss {
+    display: none;
+    z-index: 2;
+}
+
+.player-column button.active {
+    display: flex;
+    background-color: transparent;
+    height: 3.8vh;
+    font-size: 1vw;
+    padding: 4px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    z-index: 0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.player-column button.active:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.1s ease;
+}
+
+.edit-name-overlay.active,
+.change-format.active,
+.change-venue.active,
+.change-toss.active {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 10;
+}
+
+.player-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-team-addPlayers.active,
+    .away-team-addPlayers.active {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.9);
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+    }
+
+.home-team-addPlayers.active button,
+.away-team-addPlayers.active button,
+.confirm-btn {
+    background-color: var(--button);
+    box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.23);
+    border: 1px solid var(--button-font);
+    cursor: pointer;
+    border-radius: 2px;
+    color: var(--button-font);
+    font-size: 48px;
+    padding: 12px;
+}
+
+.home-team-addPlayers.active input,
+.away-team-addPlayers.active input{
+    font-size: 4.2vw;
+    padding: 12px;
+}
+
+.home-team-addPlayers.active button:hover,
+.away-team-addPlayers.active button:hover,
+.confirm-btn:hover {
+    background-color: var(--button-hover);
+    border: var(--button-hover-font);
+    color: var(--button-hover-font)
+}
+
+.home-team-addPlayers.active .close-input,
+.away-team-addPlayers.active .close-input {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    font-size: 4.2vw;
+    color: var(--primary)
+}
+
+.home-team-addPlayers.active .close-input:hover,
+.away-team-addPlayers.active .close-input:hover {
+    transform: scale(1.1);
+    transition: 0.2 ease-out;
+    background-color: transparent;
+    color: var(--primary)
+}
+
+.change-team-name.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+}
+
+.change-team-name.active button,
+.change-format.active .closeEditBtn,
+.change-venue.active .closeEditBtn,
+.change-toss.active .closeEditBtn,
+.edit-name-overlay.active .closeEditBtn {
+    padding: 12px;
+    font-size: 3.6vw;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+}
+
+.change-team-name.active .closeEditBtn:hover,
+.change-format.active .closeEditBtn:hover,
+.change-venue.active .closeEditBtn:hover,
+.change-toss.active .closeEditBtn:hover,
+.edit-name-overlay.active .closeEditBtn:hover {
+    transform: scale(1.1);
+    transition: transform ease-in 0.1s;
+    cursor: pointer;
+    background-color: transparent;
+    color: #fff;
+}
+
+.change-format.active button,
+.change-toss.active button,
+.edit-name-overlay.active button,
+.confirm-btn {
+    padding: 8px;
+    width: 30%;
+    background-color: var(--button);
+    color: var(--button-font);
+    margin: 12px 0;
+    font-size: 3.2vw;
+    border-radius: 3px;
+}
+
+.change-format.active button:hover,
+.change-toss.active button:hover,
+.edit-name-overlay.active button:hover  {
+    cursor: pointer;
+    background-color: var(--button-hover);
+    color: var(--button-hover-font);
+}
+
+.change-venue.active input,
+.change-team-name.active input,
+.edit-name-overlay.active .input-name {
+    padding: 12px;
+    font-size: 3.2vw;
+    background-color: var(--button-hover);
+    color: var(--button-hover-font);
+    border-radius: 3px;
+    text-align: center;
+    width: 50%;
+}
+
+::placeholder {
+    color: var(--placeholder);
+}
+
+@media screen and (max-width: 768px) {
+    .teams-container {
+        padding-left: 45px;
+        gap: 2vw;
+    }
+    .home-team-container h4,
+    .away-team-container h4 {
+        font-size: 4.6vw;
+    }
+    .home-team-container li,
+    .away-team-container li {
+        font-size: 3vw;
+    }
+    .home-team-container .batting-icon,
+    .away-team-container .batting-icon {
+        font-size: 2vw;
+    }
+    .team-news-btns {
+        width: 25%;
+    }
+    .player-column button.active {
+        height: 2.8vh;
+        width: 24px;
+        font-size: 8px;
+        overflow: hidden;
+    }
+    .player-column {
+        white-space: nowrap;
+    }
+    .home-team-addPlayers.active button,
+    .away-team-addPlayers.active button {
+        font-size: 2.8vw;
+        height: 50px;
+        padding: 0 12px;
+        margin-bottom: 12px;
+    }
+    .home-team-addPlayers.active input,
+    .away-team-addPlayers.active input {
+        font-size: 2.8vw;
+        height: 50px;
+        padding: 8px;
+    }
+    .home-team-addPlayers.active .close-input,
+    .away-team-addPlayers.active .close-input {
+        font-size: 4.2vw;
+    }
+    .change-team-name.active {
+        flex-direction: column;
+    }
+    .change-format.active button,
+    .change-toss.active button,
+    .confirm-btn {
+        width: 60%;
+    }
+    .change-venue.active input,
+    .change-venue.active button {
+        width: 70%;
+        font-size: 2.8vw;
+    }
+    }
+
+@media screen and (max-width: 550px) {
+    .team-news-container .close-screen {
+        right: unset;
+    }
+    .team-news-container .close-screen {
+        font-size: 5vw;
+    }
+    .teams-container {
+        padding-left: 0;
+        margin-left: 0;
+        margin-top: 22vh;
+    }
+    .home-team-container,
+    .away-team-container {
+        gap: 6px;
+        margin-top: 20px;
+    }
+    .home-team-container h4,
+    .away-team-container h4 {
+        font-size: 4.2vw;
+    }
+    .home-team-container li,
+    .away-team-container li {
+        font-size: 3.2vw;
+        margin: 1px 0;
+    }
+
+    .home-team-container .batting-icon,
+    .away-team-container .batting-icon {
+        font-size: 3.6vw;
+    }
+
+    .player-column button.active {
+        height: 1.4vh;
+        width: 24px;
+        font-size: 8px;
+        overflow: hidden;
+    }
+
+    .team-news-btns {
+        top: 27.5%;
+        left: unset;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+    .team-news-btns .skew-box-alt {
+        border-left: 10px solid var(--button);
+        border-right: 2px solid var(--button);
+        margin-left: 4vw;
+        width: 95%;
+        padding: 2px;
+    }
+    .team-news-btns .skew-box {
+        width: 95%;
+        padding: 2px;
+    }
+    .team-news-btns .skew-text {
+        font-size: 2.2vw;
+    }
+    .mobile-right {
+        position: absolute;
+        right: -2vh;
+        top: 11vh;
+        width: 45%;
+        padding: 5px 0px;
+    }
+    .mobile-left {
+        position: absolute;
+        left: -6vw;
+        top: 11vh;
+        width: 45%;
+        padding: 5px 0px;
+    }
+    .edit-name-overlay.active .input-name {
+        font-size: 5.4vw;
+        height: 46px;
+        width: 80%;
+    }
+    .change-venue.active input,
+    .change-venue.active button {
+        font-size: 5.4vw;
+    }
+
+    .change-team-name.active button,
+    .change-format.active .closeEditBtn,
+    .change-venue.active .closeEditBtn,
+    .change-toss.active .closeEditBtn,
+    .edit-name-overlay.active .closeEditBtn {
+        font-size: 6.6vw;
+    }
+
+    .change-toss.active button,
+    .change-format.active button,
+    .change-team-name.active input {
+        font-size: 5vw;
+    }
+    .home-team-addPlayers.active button,
+    .away-team-addPlayers.active button,
+    .home-team-addPlayers.active input,
+    .away-team-addPlayers.active input  {
+        font-size: 5vw;
+    }
+    .home-team-addPlayers.active .close-input,
+    .away-team-addPlayers.active .close-input {
+        font-size: 6.6vw;
+    }
+}
+
+    @media screen and (max-width: 375px) {
+        .team-news-container .close-screen {
+            font-size: 7vw;
+        }
+        .home-team-container h4,
+        .away-team-container h4 {
+        font-size: 6vw;
+        }
+        .home-team-container li,
+        .away-team-container li {
+        font-size: 3.4vw;
+        }
+
+        .home-team-container .batting-icon,
+        .away-team-container .batting-icon {
+        font-size: 4vw;
+        }
+
+        .team-news-btns .skew-text {
+            font-size: 3vw;
+        }
+
+        .mobile-right,
+        .mobile-left {
+            top: 13vh;
+        }
+        .mobile-right {
+            right: -2vw;
+        }
+    }

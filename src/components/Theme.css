@@ -1,0 +1,64 @@
+/* CSS for changing theme */
+.theme-container {
+    display: none;
+}
+
+.theme-container.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.theme-container.active ul{
+    display: flex;
+    gap: 16px;
+}
+
+.theme-container.active li {
+    margin: 12px;
+}
+
+.theme-container.active .theme-item {
+    padding: 12px;
+    width: 100%;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: var(--button);
+    color: var(--button-font);
+    border: 1px solid var(--button-font);
+}
+
+.theme-container.active .theme-item:hover {
+    background-color: var(--button-hover);
+    color: var(--button-hover-font);
+    border: var(--button-hover-font);
+}
+
+.close-theme {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    font-size: 32px;
+    margin-top: 12px;
+}
+
+.close-theme:hover {
+    transform: scale(1.1);
+    transition: transform 0.1s ease;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+    .theme-container.active .theme-item {
+        padding: 6px;
+        font-size: 18px;
+    }
+}

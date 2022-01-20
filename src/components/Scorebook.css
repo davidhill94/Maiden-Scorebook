@@ -1,0 +1,338 @@
+.scorebook-container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary);
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 80%;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    padding: 8px;
+    gap: 0.5vh;
+    border-right: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+}
+
+/**** button for closing scorebook in mobile ****/
+.close-scorebook {
+    display: none;
+}
+
+/**** Handles all Batting related information ****/
+.scorebook-batting-container {
+    display: flex;
+    width: 95%;
+}
+
+.batsman-titles {
+    display: flex;
+    color: var(--primary);
+}
+
+.batsman-list {
+    font-size: 0.9vw;
+}
+
+.batsman-list ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4px;
+    justify-content: space-evenly;
+    text-align: start;
+}
+
+.batsman-row {
+    display: flex;
+    border: 2px solid #000;
+    background-color: #fff;
+    padding: 1px;
+    margin: 2px 0px;
+}
+
+.batsman-name {
+    width: 25vw;
+    margin-left: 3px;
+}
+.batsman-header {
+    width: 25vw;
+    margin-left: 5px;
+}
+
+.batsman-wicketType,
+.batsman-wicket-header {
+    width: 19vw;
+}
+
+.batsman-wicketTaker,
+.batsman-bowler-header {
+    width: 15vw;
+}
+
+.batsman-runs,
+.batsman-balls,
+.batsman-runs-header,
+.batsman-balls-header {
+    width: 8vw;
+    text-align: center;
+}
+.batsman-runs-header,
+.batsman-balls-header {
+    margin-right: 1px;
+}
+
+/**** Handles size of middle set of boxes - wicket info, extras, totals ****/
+.scorebook-totals-container {
+    display: flex;
+    width: 95%;
+    font-size: 12px;
+    border: 2px solid #000;
+}
+
+/**** Handles Dismissal, Batsman no., & Score at Wicket information ****/
+.dismissal-container {
+    display: flex;
+    gap: 16px;
+    border: 1px solid #000;
+    padding: 1px;
+    text-align: center;
+    line-height: 24px;
+    width: 50%;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.8vw;
+    background-color: #fff;
+}
+
+.dismissal-columns-title {
+    text-align: start;
+}
+
+/**** Handles Extras and Totals Information ****/
+.scorebook-extras-container,
+.scorecard-totals {
+    display: flex;
+    text-align: center;
+    border: 1px solid #000;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 0.8vw;
+    background-color: #fff;
+}
+
+.extras-totals-combined {
+    display: flex;
+    width: 50%;
+}
+
+.scorebook-extras-container {
+    width: 55.5%;
+}
+.scorecard-totals {
+    width: 44.5%;
+}
+.scorecard-totals-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.extras-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+/**** Handles bowling information ****/
+.scorebook-bowling-container {
+    display: flex;
+    width: 95%;
+    font-size: 0.9vw;
+    margin-top: 6px;
+}
+
+.bowling-titles {
+    display: flex;
+    color: var(--primary);
+}
+
+.scorebook-bowling-container ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.scorebook-bowling-container ul .bowler-figures {
+    display: flex;
+    border: 1px solid #000;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    margin: 2px 0px;
+    padding: 1px;
+    border: 2px solid #000;
+    background-color: #fff;
+}
+
+.bowler-name,
+.bowler-header {
+    width: 25vw;
+    padding-left: 3px;
+}
+
+.bowler-overs,
+.bowler-maidens,
+.bowler-wickets,
+.bowler-runs,
+.bowler-economy,
+.bowler-strike-rate,
+.bowler-figures-header {
+    width: 12.5vw;
+    text-align: center;
+}
+
+/**** Screen Size Responsive ****/
+
+@media screen and (max-width: 960px) {
+    .scorebook-totals-container,
+    .scorebook-extras-container,
+    .scorecard-totals,
+    .scorebook-bowling-container,
+    .batsman-list {
+        font-size: 12px;
+    }
+
+    .scorecard-totals-column {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .dismissal-columns-title {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .scorebook-container {
+        min-height: 145vh;
+        justify-content: start;
+        width: 100%;
+        gap: 3vh;
+    }
+    .scorebook-batting-container {
+        margin-top: 8vh;
+        width: 95%;
+    }
+    .scorebook-totals-container {
+        flex-direction: column-reverse;
+    }
+    .scorebook-bowling-container {
+        padding-bottom: 10px;
+    }
+
+    .batsman-list,
+    .scorebook-extras-container h4,
+    .scorebook-extras-container p {
+        font-size: 1.4vw;
+    }
+
+    .batsman-row {
+        margin: 3px;
+        padding: 2px;
+    }
+
+    .batsman-name,
+    .batsman-header {
+        width: 30vw;
+    }
+    .batsman-wicketType,
+    .batsman-wicket-header {
+        width: 25vw;
+    }
+
+    .batsman-wicketTaker,
+    .batsman-bowler-header {
+        width: 25vw;
+    }
+
+    .extras-totals-combined {
+        width: 100%;
+    }
+
+    .dismissal-container {
+        width: 100%;
+        line-height: 18px;
+        font-size: 1.4vw;
+    }
+
+    .scorebook-extras-container {
+        width: 60%;
+        padding: 0px;
+    }
+    .scorecard-totals {
+        width: 40%;
+        padding: 0px;
+    }
+
+    .extras-item, 
+    .scorecard-totals-column{
+        margin: 3px;
+    }
+
+    .close-scorebook {
+        display: block;
+        position: absolute;
+        top: 3vh;
+        right: 4.5vw;
+    }
+
+    .close-scorebook button {
+        font-size: 10px;
+        padding: 2px;
+        background-color: var(--button);
+        color: var(--button-font);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .scorebook-container {
+        min-height: 125vh;
+    }
+
+    .batsman-list,
+    .batsman-titles,
+    .scorebook-totals-container,
+    .dismissal-container,
+    .scorebook-extras-container,
+    .scorecard-totals,
+    .scorebook-bowling-container  {
+        font-size: 8px;
+    }
+
+    .batsman-list,
+    .batsman-list ul {
+        width: 100%;
+        overflow-y: hidden;
+    }
+
+    .batsman-row,
+    .scorebook-bowling-container ul .bowler-figures{
+        padding: 3px;
+    }
+
+    .batsman-name,
+    .batsman-header {
+        width: 30vw;
+    }
+    .batsman-wicketType,
+    .batsman-wicket-header {
+        width: 25vw;
+    }
+
+    .batsman-wicketTaker,
+    .batsman-bowler-header {
+        width: 25vw;
+    }
+
+}

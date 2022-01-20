@@ -1,0 +1,220 @@
+.header-container {
+    min-height: 18vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 2vw;
+    background-color: var(--secondary);
+    box-shadow: inset 0px 0px 20px -10px rgba(0,0,0,0.23);
+    border-bottom: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    width: 7%;
+}
+
+.logo p {
+    height: 70px;
+    width: 90%;
+    background-color: var(--button);
+    border: 1px solid var(--button-font);
+}
+
+.theme-mobile {
+    display: none;
+}
+
+.match-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    margin-top: 6px;
+}
+
+.team-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+}
+
+.team-info {
+    display: flex;
+    gap: 0px;
+    font-size: 2.6vw;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.batting-icon {
+    margin: 0 5px;
+}
+
+.home-team-batting {
+    display: block;
+}
+
+.away-team-batting {
+    display: none;
+}
+
+.home-team-batting .hidden {
+    display: none;
+}
+
+.away-team-batting .active {
+    display: block;
+}
+
+.other-details {
+    display: flex;
+    gap: 10vw;
+    margin-top: 6px;
+    text-align: center;
+}
+
+.venue,
+.toss-winner,
+.format {
+    font-size: 1.8vw;
+}
+
+.header-buttons {
+    position: absolute;
+    right: -2vw;
+    display: flex;
+    flex-direction: column;
+    width: 23%;
+    padding-left: 5vw;
+}
+
+.header-buttons .skew-text,
+.header-buttons .skew-text-alt {
+    display: block;
+    transform: skewX(15deg);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1vw;
+    width: 100%;
+    height: 100%;
+}
+
+.header-buttons .skew-box {
+    border: 2px solid var(--button);
+    transform: skewX(-15deg);
+    border-left: 10px solid var(--button);
+    cursor: pointer;
+    padding: 1.5px;
+    width: 100%;
+    margin: 3px 0px;
+}
+
+.header-buttons .skew-box:hover {
+    transform: skewX(0deg);
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+}
+
+.header-buttons .skew-text:hover,
+.header-buttons .skew-text-alt:hover {
+    transform: skewX(0deg);
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 960px) {
+    .team-info {
+        font-size: 2.2vw;
+    }
+    .other-details {
+        gap: 5vw;
+    }
+}
+ 
+@media screen and (max-width: 768px) {
+    .team-info {
+        font-size: 2.6vw;
+        width: 20vw;
+    }
+    .other-details {
+        gap: 10vw;
+    }
+    .venue,
+    .toss-winner,
+    .format {
+        font-size: 2vw;
+    }
+    .header-buttons {
+        top: 2vh;
+    }
+    .header-buttons .skew-text,
+    .header-buttons .skew-text-alt {
+        font-size: 10px;
+        margin-left: 2px;
+    }
+    .logo {
+        width: 15%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .match-details{
+        width: 100%;
+    }
+
+    .logo {
+        display: none;
+    }
+    .team-info {
+        font-size: 4.5vw;
+        gap: 2px;
+        width: 100%;
+    }
+    .team-info h4 {
+        white-space: nowrap;
+        text-align: center;
+        width: 30vw;
+    }
+    .versus {
+        margin: 0 6px;
+        width: 15%;
+    }
+    .batting-icon {
+        margin: 0px;
+    }
+    .other-details {
+        gap: 5vw;
+    }
+    .venue,
+    .toss-winner,
+    .format {
+        font-size: 3.4vw;
+    }
+    .change-theme {
+        display: none;
+    }
+
+    .header-buttons {
+        display: none;
+    }
+
+    .theme-mobile {
+        display: block;
+        position: absolute;
+        bottom: 1.2vh;
+        right: 0.2vw;
+    }
+    .theme-mobile button {
+        padding: 6px;
+        background-color: var(--button);
+        color: var(--button-font);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

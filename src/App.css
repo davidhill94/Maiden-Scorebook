@@ -1,38 +1,153 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+:root {
+  --primary: #fff;
+  --secondary: #A61300;
+  --button: #590A00;
+  --button-hover: #000;
+  --button-hover-font: #fff;
+  --button-font: #fff;
+  --scoreboard-color: #000;
+  --scoreboard-font: #fff;
+  --placeholder: #000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:root.australia {
+  --primary: #ffcd00;
+  --secondary: #174617;
+  --button: #ffcd00;
+  --button-hover: #00843d;
+  --button-hover-font: #ffcd00;
+  --button-font: #000;
+  --scoreboard-color: #000;
+  --scoreboard-font: #fff;
+  --placeholder: #000;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+:root.bangladesh {
+  --primary: #fff;
+  --secondary: #00694e;
+  --button: #870200;
+  --button-hover: #00843d;
+  --button-hover-font: #fff;
+  --button-font: #fff;
+  --scoreboard-color: #000;
+  --scoreboard-font: #fff;
+  --placeholder: #000;
 }
 
-.App-link {
-  color: #61dafb;
+:root.england {
+  --primary: #fff;
+  --secondary: #1b418f;
+  --button: #6d9fbf;
+  --button-hover: #fff;
+  --button-hover-font: #1b418f;
+  --button-font: #fff;
+  --scoreboard-color: #000;
+  --scoreboard-font: #fff;
+  --placeholder: #000;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+:root.india {
+  --primary: #2255a4;
+  --secondary: #b3e3ee;
+  --button: #d6b268;
+  --button-hover: #2255a4;
+  --button-hover-font: #fff;
+  --button-font: #000;
+  --scoreboard-color: #000;
+  --scoreboard-font: #fff;
+  --placeholder: #000;
+}
+
+:root.ireland {
+  --primary: #0c1f4c;
+  --secondary: #77a41e;
+  --button: #cdde7d;
+  --button-hover: #0c1f4c;
+  --button-hover-font: #fff;
+  --button-font: #000;
+  --scoreboard-color: #000;
+  --scoreboard-font: #fff;
+  --placeholder: #000;
+}
+
+:root.new-zealand {
+  --primary: #fff;
+  --secondary: #000;
+  --button: #828282;
+  --button-hover: #000;
+  --button-hover-font: #fff;
+  --button-font: #000;
+  --scoreboard-color: radial-gradient(ellipse at center, #FFFFFF, #DFDFDF);
+  --scoreboard-font: #000;
+  --placeholder: #000;
+}
+
+:root.pakistan {
+  --primary: #fff;
+  --secondary: #006629;
+  --button: #B59A0A;
+  --button-hover: #fff;
+  --button-hover-font: #006629;
+  --button-font: #000;
+  --scoreboard-color: #000;
+  --scoreboard-font: #fff;
+  --placeholder: #000;
+}
+
+:root.south-africa {
+  --primary: #10572e;
+  --secondary: #deab1a;
+  --button: #006629;
+  --button-hover: #fff;
+  --button-hover-font: #10572e;
+  --button-font: #fff;
+  --scoreboard-color: #000;
+  --scoreboard-font: #fff;
+  --placeholder: #000;
+}
+
+:root.sri-lanka {
+  --primary: #f0b001;
+  --secondary: #1a5193;
+  --button: #f0b001;
+  --button-hover: #fff;
+  --button-hover-font: #10572e;
+  --button-font: #000;
+  --scoreboard-color: #000;
+  --scoreboard-font: #fff;
+  --placeholder: #000;
+}
+
+:root.west-indies {
+  --primary: #f2b10e;
+  --secondary: #7b0041;
+  --button: #f2b10e;
+  --button-hover: #161695;
+  --button-hover-font: #f2b10e;
+  --button-font: #161695;
+  --scoreboard-color: #000;
+  --scoreboard-font: #fff;
+  --placeholder: #000;
+}
+
+:root.zimbabwe {
+  --primary: #d3ad16;
+  --secondary: #9d011f;
+  --button: #d3ad16;
+  --button-hover: #287a29;
+  --button-hover-font: #f2b10e;
+  --button-font: #000;
+  --scoreboard-color: #000;
+  --scoreboard-font: #fff;
+  --placeholder: #000;
 }

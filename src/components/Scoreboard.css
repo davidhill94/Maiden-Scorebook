@@ -1,0 +1,534 @@
+.grid-container {
+    min-height: 80vh;
+    width: 80%;
+    background: var(--scoreboard-color);
+    color: var(--scoreboard-font);
+    border-top: 2px solid var(--primary);
+    border-right: 1px solid var(--primary);
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+    grid-template-rows: 45% 55%;
+}
+
+/* Handles current batsman details */
+.batsman-one-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    padding-top: 3vh;
+}
+
+.batsman-two-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    padding-top: 3vh;
+}
+
+.batsman {
+    width: 100%;
+}
+
+.batsman-one-container h3,
+.batsman-two-container h3 {
+    font-size: 2vw;
+    display: flex;
+    align-items: center;
+    word-spacing: 190px;
+    width: 80%;
+}
+
+.batsman-one-container p,
+.batsman-two-container p {
+    font-size: 5.4vw;
+}
+
+.batsman-one-container .deliveries,
+.batsman-two-container .deliveries {
+    font-size: 1.6vw;
+}
+
+.batsman-one-container .onStrike,
+.batsman-two-container .onStrike {
+    font-size: 2.8vw;
+    padding-left: 1vw;
+}
+
+.batsman-one-container .batsman,
+.batsman-two-container .batsman {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+}
+
+/* Handles total score details */
+.total-score-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    margin-top: 20px;
+}
+
+.total-score-container h3 {
+    font-size: 5vmax;
+}
+
+.total-score-container p {
+    font-size: 6.6vw;
+    overflow-y: hidden;
+}
+
+/* Handles current bowler */
+.bowling-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    justify-content: center;
+    align-items: center;
+    padding-top: 6px;
+}
+
+.current-bowler {
+    padding: 4px;
+}
+
+.current-bowler h4 {
+    font-size: 2.2vw;
+}
+
+.current-bowler h4 button {
+    background-color: transparent;
+    color: var(--scoreboard-font);
+    border: none;
+    margin-left: 12px;
+    font-size: 1.6vw;
+    cursor: pointer;
+}
+
+.current-bowler h4 button:hover {
+    transform: scale(1.1);
+    transition: 0.2s ease;
+}
+
+.current-bowler p {
+    font-size: 2.2vw;
+}
+
+/* Handles Run Rate & Last 10 deliveries */
+.run-rate,
+.deliveries {
+    padding: 4px;
+}
+
+.run-rate h4,
+.run-rate p {
+    font-size: 1.8vw;
+}
+
+.deliveries-tally h4,
+.deliveries-tally p {
+    font-size: 1.2vw;
+}
+
+/* Handles wickets and overs */
+.wickets-overs-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.wickets-container,
+.overs-container {
+    text-align: center;
+}
+
+.wickets-container h3,
+.overs-container h3 {
+    font-size: 2.6vw;
+}
+
+.wickets-container p,
+.overs-container p {
+    font-size: 5.6vw;
+}
+
+/* handles extras  */
+.extras-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+.extras-line-break-1,
+.extras-line-break-2,
+.extras-line-break-3 {
+    display: flex;
+    gap: 3vw;
+}
+
+.extras-line-break-3 {
+    margin-left: 10px;
+}
+
+.extras {
+    padding: 0 16px;
+}
+
+.extras h4,
+.extras p {
+    font-size: 2vw;
+}
+
+/* Bowler Selection Pop up */
+.bowler-select-container {
+    display: none;
+}
+
+.bowler-select-container.active {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 99vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+
+.bowler-select-container h4 {
+    text-align: center;
+    margin-top: 5vh;
+    margin-bottom: 2vh;
+    font-size: 2.6vw;
+    color: #fff;
+}
+
+.bowler-select-container ul {
+    color: #fff;
+    list-style-type: none;
+    text-align: center;
+}
+
+.bowler-select-container li {
+    padding: 4.4px;
+}
+
+.change-bowler {
+    background-color: transparent;
+    padding: 3px;
+    color: var(--scoreboard-font);
+    border: none;
+    font-size: 2vw;
+}
+
+.bowler-select-container button {
+    font-size: 2vw;
+    width: 70%;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.bowler-select-container button:hover {
+    color: #000;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* Mobile screen buttons */
+.btns-mobile {
+    display: none;
+}
+
+.mobile-save-button {
+    display: none;
+}
+
+.mobile-save-button.active {
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    position: absolute;
+    bottom: -4vh;
+    background-color: var(--button-hover);
+    color: var(--button-hover-font);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/**** Handles unwanted scroll bars ****/
+.batsman-one-container h3,
+.batsman-two-container h3,
+.batsman-one-container p,
+.batsman-two-container p,
+.batsman-one-container .deliveries,
+.batsman-two-container .deliveries,
+.batsman-one-container .onStrike,
+.batsman-two-container .onStrike,
+.batsman-one-container .batsman,
+.batsman-two-container .batsman,
+.total-score-container,
+.total-score-container h3,
+.total-score-container p,
+.current-bowler,
+.run-rate,
+.deliveries-tally,
+.wickets-container,
+.overs-container,
+.wickets-container h3,
+.overs-container h3
+.wickets-container p,
+.overs-container,
+.extras {
+    overflow-y: hidden;
+}
+
+/**** HANDLES SCREEN SIZE CHANGES ****/
+
+@media screen and (max-width: 768px) {
+    .grid-container {
+    grid-template-columns: 33% 34% 33%;
+    grid-template-rows: 40% 40% 20%;
+    }
+    .batsman-one-container{
+        grid-column: 1 / 2;
+    }
+    .batsman-two-container {
+        grid-column: 3 / 4;
+    }
+    .total-score-container {
+        grid-column: 2 / 3;
+    }
+    .bowling-container {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+    .wickets-overs-container {
+        grid-column: 2 / 4;
+        grid-row: 2 / 3;
+
+    }
+    .extras-container {
+        grid-column: 1 / 4;
+        grid-row: 3 / 4;
+        flex-direction: row;
+        gap: 0;
+    }
+    .extras-line-break-1,
+    .extras-line-break-2,
+    .extras-line-break-3 {
+        align-items: center;
+        gap: 0;
+    }
+    .batsman-one-container h3,
+    .batsman-two-container h3 {
+        font-size: 2.2vw;
+    }
+    .batsman-one-container p,
+    .batsman-two-container p {
+        font-size: 5.5vw;
+    }
+    .batsman-one-container .deliveries,
+    .batsman-two-container .deliveries,
+    .batsman-one-container .onStrike,
+    .batsman-two-container .onStrike {
+        font-size: 2.2vw;
+    }  
+    .total-score-container h3 {
+        font-size: 5vw;
+    }
+    .total-score-container p {
+        font-size: 6.6vw;
+    }
+
+    .current-bowler h4 {
+        font-size: 2.2vw;
+    }
+    
+    .current-bowler h4 button {
+        font-size: 1.6vw;
+    }
+    .current-bowler p {
+        font-size: 2.2vw;
+    }
+    .run-rate h4,
+    .deliveries-tally h4,
+    .run-rate p,
+    .deliveries-tally p {
+    font-size: 2vw;
+    }
+    .wickets-overs-container {
+        flex-direction: row;
+        gap: 18vw;
+    }
+    .wickets-container h3,
+    .overs-container h3 {
+        font-size: 2.2vw;
+    }
+    .wickets-container p,
+    .overs-container p {
+        font-size: 6vw;
+    }
+    .extras h4,
+    .extras p {
+        font-size: 2vw;
+    }
+}
+
+    @media screen and (max-width: 500px) {
+        .grid-container {
+            width: 100%;
+            border-top: none;
+        }
+        .batsman-two-container,
+        .batsman-one-container,
+        .total-score-container {
+            padding-top: 5vh;
+        }
+        .batsman-one-container h3,
+        .batsman-two-container h3 {
+            font-size: 3vw;
+        }
+    .batsman-one-container p,
+    .batsman-two-container p {
+        font-size: 9.6vw;
+    }
+    .batsman-one-container .deliveries,
+    .batsman-two-container .deliveries,
+    .batsman-one-container .onStrike,
+    .batsman-two-container .onStrike {
+    font-size: 3.2vw;
+    }  
+    .total-score-container h3 {
+        font-size: 8.4vw;
+    }
+    .total-score-container p {
+        font-size: 12vw;
+    }
+
+    .bowler-select-container.active {
+        width: 100%;
+        left: 0;
+    }
+
+    .bowling-container {
+        padding-left: 10px;
+    }
+
+    .change-bowler {
+        font-size: 3vw;
+    }
+
+    .current-bowler h4,
+    .run-rate h4,
+    .deliveries-tally h4,
+    .run-rate p,
+    .deliveries-tally p {
+        font-size: 3vw;
+    }
+
+    .current-bowler h4 button {
+        font-size: 2.6vw;
+    }
+    .current-bowler p {
+        font-size: 3.6vw;
+    }
+    .wickets-container h3,
+    .overs-container h3 {
+        font-size: 4.6vw;
+    }
+    .wickets-container p,
+    .overs-container p {
+        font-size: 10vw;
+    }
+    .extras-container {
+        justify-content: space-evenly;
+    }
+    .extras h4,
+    .extras p {
+        font-size: 3.6vw;
+    }
+    .extras-line-break-1,
+    .extras-line-break-2,
+    .extras-line-break-3 {
+        gap: 6vw;
+    }
+    .extras {
+        padding: 0;
+    }
+    .btns-mobile {
+        display: flex;
+        position: absolute;
+        top: 18vh;
+        left: -4vw;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 110%;
+        gap: 1vw;
+    }
+
+    .skew-text{
+        display: block;
+        transform: skewX(15deg);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 10px;
+        width: 100%;
+        height: 100%;
+    }
+    .skew-box,
+    .skew-box-center,
+    .skew-box-left {
+        border: 2px solid var(--button);
+        transform: skewX(-15deg);
+        border-left: 10px solid var(--button);
+        cursor: pointer;
+        padding: 1px;
+        width: 90%;
+    }
+
+    .skew-box-center {
+        border-right: 10px solid var(--button);
+    }
+
+    .skew-box-left {
+        border-right: 10px solid var(--button);
+        border-left: 2px solid var(--button);
+    }
+    
+    .bowler-select-container button {
+        font-size: 3.2vw;
+        padding: 4px;
+    }
+
+    .bowler-select-container h4 {
+        font-size: 6vw;
+    }
+}
