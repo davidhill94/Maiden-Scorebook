@@ -47,7 +47,7 @@ class Header extends Component {
         <div className="header-container">
             {/* Logo container */}
             <div className="logo">
-                <p></p>
+                <img src="/Images/maiden-scorebook-logo.png" alt="logo"></img>
             </div>
             {/* Theme button for mobile */}
             <div className="theme-mobile">

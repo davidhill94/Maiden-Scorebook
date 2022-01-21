@@ -13,14 +13,7 @@
 .logo {
     display: flex;
     flex-direction: column;
-    width: 7%;
-}
-
-.logo p {
-    height: 70px;
-    width: 90%;
-    background-color: var(--button);
-    border: 1px solid var(--button-font);
+    width: 8vw;
 }
 
 .theme-mobile {
