@@ -1,5 +1,5 @@
 .header-container {
-    min-height: 18vh;
+    height: 18vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -13,9 +13,7 @@
 
 .logo {
     display: flex;
-    flex-direction: column;
-    width: 8vw;
-    height: auto;
+    height: 10vh;
 }
 
 .theme-mobile {
