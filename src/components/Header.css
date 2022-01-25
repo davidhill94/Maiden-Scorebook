@@ -8,12 +8,14 @@
     box-shadow: inset 0px 0px 20px -10px rgba(0,0,0,0.23);
     border-bottom: 2px solid var(--primary);
     color: var(--primary);
+    position: relative;
 }
 
 .logo {
     display: flex;
     flex-direction: column;
     width: 8vw;
+    height: auto;
 }
 
 .theme-mobile {
@@ -42,6 +44,7 @@
     font-size: 2.6vw;
     justify-content: space-around;
     align-items: center;
+    white-space: pre-wrap;
 }
 
 .batting-icon {
@@ -137,6 +140,7 @@
     }
     .logo {
         width: 80px;
+        height: auto;
     }
 }
 
@@ -152,7 +156,7 @@
         display: none;
     }
     .team-info {
-        font-size: 4.5vw;
+        font-size: 3.8vw;
         gap: 2px;
         width: 100%;
     }
@@ -164,6 +168,7 @@
     .versus {
         margin: 0 6px;
         width: 15%;
+        font-size: 3.8vw;
     }
     .batting-icon {
         margin: 0px;
@@ -187,7 +192,7 @@
     .theme-mobile {
         display: block;
         position: absolute;
-        bottom: 2vh;
+        top: 0;
         right: 0.2vw;
     }
     .theme-mobile button {

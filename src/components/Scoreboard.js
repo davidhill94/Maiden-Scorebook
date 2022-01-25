@@ -113,6 +113,15 @@ constructor(props){
                 </div>
                 </div>
             </div>
+            {/* Mobile Screen Buttons for updating scoreboard / team page */}
+            <div className="btns-mobile">
+            <button className="scoreboard-btn" onClick={this.props.handleTeamScreen}>Team Details</button>
+            <button className="scoreboard-btn" onClick={this.mobileButtons}>Update Scoreboard</button>
+            <button className="scoreboard-btn" onClick={this.props.changeScreen}>Scorebook</button>
+            </div>
+            <div>
+                <button className="mobile-save-button" onClick={this.mobileButtons}>Save</button>
+            </div>
         </div>
         {/* active menu for selecting current bowler */}
         <div className="bowler-select-container">
@@ -145,17 +154,6 @@ constructor(props){
             </div>
             }
             </div>
-
-            {/* Mobile Screen Buttons for updating scoreboard / team page */}
-            <div className="btns-mobile">
-            <button className="scoreboard-btn" onClick={this.props.handleTeamScreen}>Team Details</button>
-            <button className="scoreboard-btn" onClick={this.mobileButtons}>Update Scoreboard</button>
-            <button className="scoreboard-btn" onClick={this.props.changeScreen}>Scorebook</button>
-            </div>
-            <div>
-                <button className="mobile-save-button" onClick={this.mobileButtons}>Save</button>
-            </div>
-
         </div>
     )}
 
