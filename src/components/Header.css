@@ -13,8 +13,8 @@
 
 .logo {
     display: flex;
-    height: 10vh;
-    width: auto;
+    width: 90px;
+    height: 90px;
 }
 
 .theme-mobile {
@@ -124,6 +124,10 @@
     }
     .other-details {
         gap: 10vw;
+    }
+    .logo {
+        height: 60px;
+        width: 60px;
     }
     .venue,
     .toss-winner,
