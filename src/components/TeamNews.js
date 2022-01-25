@@ -256,8 +256,7 @@ class TeamNews extends Component {
                 placeholder="Add Player"></input>
                 </div>
                 <div className="home-team-name">
-                <h4>{this.props.homeName.length > 0 ? this.props.homeName : "Home Team"}</h4>
-                <p className="batting-icon">{this.props.isBatting === true ? <GiCricketBat />  : null}</p>
+                <h4>{this.props.homeName.length > 0 ? this.props.homeName : "Home Team"}{this.props.isBatting === true ? <GiCricketBat />  : null}</h4>
                 </div>
                 <ul>
                     {this.props.homePlayers.map(
@@ -280,8 +279,7 @@ class TeamNews extends Component {
                 <input id="inputAway" className="addPlayerAway" type="text"></input>
                 </div>
                 <div className="away-team-name">
-                <h4>{this.props.awayName.length > 0 ? this.props.awayName : "Away Team"}</h4>
-                <p className="batting-icon">{this.props.isBatting === false ? <GiCricketBat />  : null}</p>
+                <h4>{this.props.awayName.length > 0 ? this.props.awayName : "Away Team"}{this.props.isBatting === false ? <GiCricketBat />  : null}</h4>
                 </div>
                 <ul>
                     {this.props.awayPlayers.map(

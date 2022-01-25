@@ -44,7 +44,7 @@
     font-size: 2.6vw;
     justify-content: space-around;
     align-items: center;
-    white-space: pre-wrap;
+    white-space: nowrap;
 }
 
 .batting-icon {
@@ -120,7 +120,7 @@
  
 @media screen and (max-width: 768px) {
     .team-info {
-        font-size: 2.6vw;
+        font-size: 2.2vw;
         width: 20vw;
     }
     .other-details {
@@ -137,10 +137,6 @@
     .header-buttons .header-btn {
         font-size: 10px;
         margin-left: 2px;
-    }
-    .logo {
-        width: 80px;
-        height: auto;
     }
 }
 
