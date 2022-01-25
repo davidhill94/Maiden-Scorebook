@@ -122,35 +122,22 @@
     margin: 1vh;
 }
 
-.team-news-btns .skew-box,
-.team-news-btns .skew-box-alt {
+.team-news-btns .edit-team-news-btn,
+.team-news-btns .edit-team-news-btn-alt {
     border: 2px solid var(--button);
-    transform: skewX(-15deg);
     border-right: 10px solid var(--button);
     cursor: pointer;
     padding: 5px;
     width: 90%;
-}
-
-.team-news-btns .skew-box:hover,
-.team-news-btns .skew-box-alt:hover {
-    transform: skewX(0deg);
-    transform: scale(1.1);
-    transition: 0.2s ease-in-out;
-}
-
-.team-news-btns .skew-text {
-    display: block;
-    transform: skewX(15deg);
     text-decoration: none;
     font-weight: 600;
     font-size: 1.2vw;
-    width: 100%;
-    height: 100%;
+    background-color: #fff;
+    color: #000;
 }
 
-.team-news-btns .skew-text:hover {
-    transform: skewX(0deg);
+.team-news-btns .edit-team-news-btn:hover,
+.team-news-btns .edit-team-news-btn-alt:hover {
     transform: scale(1.1);
     transition: 0.2s ease-in-out;
 }
@@ -452,20 +439,20 @@
         width: 100%;
         height: 100%;
     }
-    .team-news-btns .skew-box-alt {
+    .team-news-btns .edit-team-news-btn-alt {
         border-left: 10px solid var(--button);
         border-right: 2px solid var(--button);
         margin-left: 4vw;
         width: 95%;
         padding: 2px;
-    }
-    .team-news-btns .skew-box {
-        width: 95%;
-        padding: 2px;
-    }
-    .team-news-btns .skew-text {
         font-size: 2.2vw;
     }
+    .team-news-btns .edit-team-news-btn {
+        width: 95%;
+        padding: 2px;
+        font-size: 2.2vw;
+    }
+
     .mobile-right {
         position: absolute;
         right: -2vh;
@@ -533,7 +520,8 @@
         font-size: 4vw;
         }
 
-        .team-news-btns .skew-text {
+        .team-news-btns .edit-team-news-btn,
+        .team-news-btns .edit-team-news-btn-alt {
             font-size: 3vw;
         }
 

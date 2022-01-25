@@ -165,6 +165,11 @@ class Buttons extends Component {
             </div>
             {/**** Menu for adding runs of run out wicket ****/}
             <div className="runOut-runs">
+              <div className="runOut-totals">
+                <p>Runs: {this.props.totalRuns}</p>
+                <p>Byes: {this.props.byes}</p>
+                <p>Leg Byes: {this.props.legByes}</p>
+              </div>
               <ul>
                 <li><button onClick={this.props.handleRunOutRuns}>Runs +</button></li>
                 <li><button onClick={this.props.handleRunOutByes}>Bye +</button></li>
@@ -237,7 +242,7 @@ class Buttons extends Component {
                 </ul>
             </div>
       }
-              <button className="button-confirm-btn" onClick={this.props.handleEditBattingToggle}>Confirm</button>
+              <button className="button-confirm-btn" onClick={this.props.handleEditBattingToggle}>Close</button>
             </div>
 
 {/**** Menu for editing batting team stats - Edit Stats ****/}
@@ -329,7 +334,7 @@ class Buttons extends Component {
                 </ul>
             </div>
       }
-              <button className="button-confirm-btn" onClick={this.props.handleEditBowlingToggle}>Confirm</button>
+              <button className="button-confirm-btn" onClick={this.props.handleEditBowlingToggle}>Close</button>
             </div>
 
  {/**** Menu for editing bowling team stats - Edit Stats ****/}

@@ -76,7 +76,7 @@ class Functions extends Component {
 
       /**** Switches between scorebook and scoreboard ****/
       changeScreen = () => {
-        const innerText = document.querySelector(".header-buttons .skew-text-alt")
+        const innerText = document.getElementById("scorebook-btn")
         if(this.state.screen === false) {
           innerText.innerText = "Scorebook"
           this.setState({
@@ -2863,8 +2863,8 @@ class Functions extends Component {
                 this.addMaiden()
       };
 
-      /**** Handles Wicket Correction button ****/
-      /*wicketCorrection = () => {
+      /**** Handles Wicket Correction button on run out ****/
+      wicketCorrection = () => {
         if(this.state.isBatting === true) {
           for (let i = 0; i < this.state.awayPlayers.length; i++) {
             if(this.state.bowler === "ONE") {
@@ -2906,7 +2906,7 @@ class Functions extends Component {
                   }
                 } 
               }
-      }*/
+      }
 
       /**** Runs all relevant functions on wicket ****/
       handleWicket = (event) => {

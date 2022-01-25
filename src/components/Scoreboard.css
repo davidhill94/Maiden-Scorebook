@@ -111,20 +111,6 @@
     font-size: 2.2vw;
 }
 
-.current-bowler h4 button {
-    background-color: transparent;
-    color: var(--scoreboard-font);
-    border: none;
-    margin-left: 12px;
-    font-size: 1.6vw;
-    cursor: pointer;
-}
-
-.current-bowler h4 button:hover {
-    transform: scale(1.1);
-    transition: 0.2s ease;
-}
-
 .current-bowler p {
     font-size: 2.2vw;
 }
@@ -246,6 +232,12 @@
     font-size: 2vw;
 }
 
+.change-bowler:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform ease 0.2s;
+}
+
 .bowler-select-container button {
     font-size: 2vw;
     width: 70%;
@@ -274,12 +266,13 @@
     width: 100%;
     height: 10vh;
     position: absolute;
-    bottom: -4vh;
+    bottom: 0vh;
     background-color: var(--button-hover);
     color: var(--button-hover-font);
     justify-content: center;
     align-items: center;
     text-align: center;
+    z-index: 10;
 }
 
 /**** Handles unwanted scroll bars ****/
@@ -486,41 +479,25 @@
         display: flex;
         position: absolute;
         top: 18vh;
-        left: -4vw;
         justify-content: center;
         align-items: center;
         text-align: center;
-        width: 110%;
+        width: 100%;
         gap: 1vw;
     }
 
-    .skew-text{
+    .scoreboard-btn{
         display: block;
-        transform: skewX(15deg);
         text-decoration: none;
         font-weight: 600;
         font-size: 10px;
         width: 100%;
         height: 100%;
-    }
-    .skew-box,
-    .skew-box-center,
-    .skew-box-left {
-        border: 2px solid var(--button);
-        transform: skewX(-15deg);
-        border-left: 10px solid var(--button);
         cursor: pointer;
-        padding: 1px;
-        width: 90%;
-    }
-
-    .skew-box-center {
-        border-right: 10px solid var(--button);
-    }
-
-    .skew-box-left {
-        border-right: 10px solid var(--button);
-        border-left: 2px solid var(--button);
+        border: 2px solid var(--button);
+        border-left: 8px solid var(--button);
+        border-right: 8px solid var(--button);
+        background-color: #fff;
     }
     
     .bowler-select-container button {

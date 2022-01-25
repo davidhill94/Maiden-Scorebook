@@ -228,16 +228,16 @@ class TeamNews extends Component {
                 {/* Buttons for editing players, adding players, editing match details */}
                 <div className="team-news-btns">
                     <div className="mobile-left">
-                <button className="skew-box" onClick={this.toggleEditBtn}><span className="skew-text" id="edit-toggle">Edit Players</span></button>
-                <button className="skew-box" onClick={this.addHomePlayerToggle}><span className="skew-text">Add Home Player</span></button>
-                <button className="skew-box" onClick={this.addAwayPlayerToggle}><span className="skew-text">Add Away Player</span></button>
-                <button className="skew-box" onClick={this.setTeamNameToggle}><span className="skew-text">Set Team Names</span></button>
+                <button className="edit-team-news-btn" id="edit-toggle" onClick={this.toggleEditBtn}>Edit Players</button>
+                <button className="edit-team-news-btn" onClick={this.addHomePlayerToggle}>Add Home Player</button>
+                <button className="edit-team-news-btn" onClick={this.addAwayPlayerToggle}>Add Away Player</button>
+                <button className="edit-team-news-btn" onClick={this.setTeamNameToggle}>Set Team Names</button>
                 </div>
                 <div className="mobile-right">
-                <button className="skew-box-alt" onClick={this.setFormatToggle}><span className="skew-text">Set Format</span></button>
-                <button className="skew-box-alt" onClick={this.setVenueToggle}><span className="skew-text">Set Venue</span></button>
-                <button className="skew-box-alt" onClick={this.setTossToggle}><span className="skew-text">Set Toss Winner</span></button>
-                <button className="skew-box-alt" onClick={this.props.handleBatting}><span className="skew-text">Change Batting</span></button>
+                <button className="edit-team-news-btn-alt" onClick={this.setFormatToggle}>Set Format</button>
+                <button className="edit-team-news-btn-alt" onClick={this.setVenueToggle}>Set Venue</button>
+                <button className="edit-team-news-btn-alt" onClick={this.setTossToggle}>Set Toss Winner</button>
+                <button className="edit-team-news-btn-alt" onClick={this.props.handleBatting}>Change Batting</button>
                 </div>
                 </div>
                 {/* Menu for editing player names */}
@@ -320,7 +320,7 @@ class TeamNews extends Component {
             <div className="change-toss">
                 <button className="closeEditBtn" onClick={this.setTossToggle}><i class="fas fa-times"></i></button>
                 <button onClick={this.tossFunctions} value={this.props.homeName}>{this.props.homeName === "" ? "Home Team" : this.props.homeName}</button>
-                <button onClick={this.tossFunctions} value={this.props.awayName === "" ? "Away Team" : this.props.awayName}>{this.props.awayName}</button>
+                <button onClick={this.tossFunctions} value={this.props.awayName}>{this.props.awayName === "" ? "Away Team" : this.props.awayName}</button>
             </div>
         </div>
         </div>

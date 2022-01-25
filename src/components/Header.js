@@ -83,9 +83,9 @@ class Header extends Component {
                 </div>
             </div>
             <div className="header-buttons">
-                <button className="skew-box" onClick={this.props.handleTeamScreen}><span className="skew-text">Team News</span></button>
-                <button className="skew-box" onClick={this.toggleThemeMenu}><span className="skew-text">Theme</span></button>
-                <button className="skew-box" onClick={this.props.changeScreen}><span className="skew-text-alt">Scorebook</span></button>
+                <button className="header-btn" onClick={this.props.handleTeamScreen}>Team News</button>
+                <button className="header-btn" onClick={this.toggleThemeMenu}>Theme</button>
+                <button className="header-btn" id="scorebook-btn" onClick={this.props.changeScreen}>Scorebook</button>
             </div>
         </div>
         </div>

@@ -148,9 +148,9 @@ constructor(props){
 
             {/* Mobile Screen Buttons for updating scoreboard / team page */}
             <div className="btns-mobile">
-            <button className="skew-box-left" onClick={this.props.handleTeamScreen}><span className="skew-text">Team Details</span></button>
-            <button className="skew-box-center" onClick={this.mobileButtons}><span className="skew-text">Update Scoreboard</span></button>
-            <button className="skew-box" onClick={this.props.changeScreen}><span className="skew-text">Scorebook</span></button>
+            <button className="scoreboard-btn" onClick={this.props.handleTeamScreen}>Team Details</button>
+            <button className="scoreboard-btn" onClick={this.mobileButtons}>Update Scoreboard</button>
+            <button className="scoreboard-btn" onClick={this.props.changeScreen}>Scorebook</button>
             </div>
             <div>
                 <button className="mobile-save-button" onClick={this.mobileButtons}>Save</button>
