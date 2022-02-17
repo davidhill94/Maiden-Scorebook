@@ -214,14 +214,13 @@
     }
 
 .home-team-addPlayers.active button,
-.away-team-addPlayers.active button,
-.confirm-btn {
-    background-color: var(--button);
+.away-team-addPlayers.active button {
+    background-color: #fff;
     box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.23);
-    border: 1px solid var(--button-font);
+    border: 1px solid #fff;
     cursor: pointer;
     border-radius: 2px;
-    color: var(--button-font);
+    color: #000;
     font-size: 48px;
     padding: 12px;
 }
@@ -234,10 +233,11 @@
 
 .home-team-addPlayers.active button:hover,
 .away-team-addPlayers.active button:hover,
+.change-team-name .confirm-btn:hover,
 .confirm-btn:hover {
-    background-color: var(--button-hover);
-    border: var(--button-hover-font);
-    color: var(--button-hover-font)
+    background-color: rgb(204, 204, 204);
+    color: #000;
+    cursor: pointer;
 }
 
 .home-team-addPlayers.active .close-input,
@@ -270,7 +270,7 @@
     gap: 12px;
 }
 
-.change-team-name.active button,
+.change-team-name.active .closeEditBtn,
 .change-format.active .closeEditBtn,
 .change-venue.active .closeEditBtn,
 .change-toss.active .closeEditBtn,
@@ -300,8 +300,8 @@
 .confirm-btn {
     padding: 8px;
     width: 30%;
-    background-color: var(--button);
-    color: var(--button-font);
+    background-color: #fff;
+    color: #000;
     margin: 12px 0;
     font-size: 3.2vw;
     border-radius: 3px;
@@ -320,8 +320,8 @@
 .edit-name-overlay.active .input-name {
     padding: 12px;
     font-size: 3.2vw;
-    background-color: var(--button-hover);
-    color: var(--button-hover-font);
+    background-color: #fff;
+    color: #000;
     border-radius: 3px;
     text-align: center;
     width: 50%;

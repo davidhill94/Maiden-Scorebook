@@ -300,6 +300,7 @@ class TeamNews extends Component {
                 <button className="closeEditBtn" onClick={this.setTeamNameToggle}><i class="fas fa-times"></i></button>
                 <input onChange={this.props.handleInputHome} value={this.props.homeName} placeholder="Home Team"></input>
                 <input onChange={this.props.handleInputAway} value={this.props.awayName} className="away-team" type="text" placeholder="Away Team"></input>
+                <button className="confirm-btn" onClick={this.setTeamNameToggle}>Confirm</button>
             </div>
             {/* Menu for changing venue */}
             <div className="change-venue">
