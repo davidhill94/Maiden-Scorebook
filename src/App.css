@@ -105,11 +105,11 @@
 }
 
 :root.south-africa {
-  --primary: #10572e;
-  --secondary: #f2b10e;
-  --button: #006629;
+  --primary: rgb(16, 87, 46);
+  --secondary: rgb(242, 177, 14);
+  --button: rgb(0, 102, 41);
   --button-hover: #fff;
-  --button-hover-font: #10572e;
+  --button-hover-font: rgb(16, 87, 46);
   --button-font: #fff;
   --scoreboard-color: #000;
   --scoreboard-font: #fff;

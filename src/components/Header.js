@@ -1,49 +1,53 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './Header.css';
 import { GiCricketBat } from "react-icons/gi";
-import Theme from './Theme';
+import { toggleScorebookScreen, toggleTeamNewsScreen, toggleThemeScreen } from '../actions/Pages';
 
-class Header extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            themeToggle: true,
-            theme: "standard"
+
+export default function Header() {
+
+    const dispatch = useDispatch();
+    const battingTeam = useSelector(state => state.battingTeam);
+    const homeTeamName = useSelector(state => state.homeTeamName);
+    const awayTeamName = useSelector(state => state.awayTeamName);
+    const format = useSelector(state => state.format);
+    const venue = useSelector(state => state.venue);
+    const toss = useSelector(state => state.toss);
+    const themeScreen = useSelector(state => state.themeScreen);
+    const teamNewsScreen = useSelector(state => state.teamNewsScreen);
+    const scorebookScreen = useSelector(state => state.scorebookScreen);
+
+    const handleScorebookScreen = () => {
+        dispatch(toggleScorebookScreen())
+        if(themeScreen === true){
+            dispatch(toggleThemeScreen())
+        }
+        if(teamNewsScreen === true){
+            dispatch(toggleTeamNewsScreen())
+        }
+    }
+    const handleTeamNewsScreen = () => {
+        dispatch(toggleTeamNewsScreen())
+        if(themeScreen === true){
+            dispatch(toggleThemeScreen())
+        }
+        if(scorebookScreen === true){
+            dispatch(toggleScorebookScreen())
+        }
+    }
+    const handleThemeScreen = () => {
+        dispatch(toggleThemeScreen())
+        if(teamNewsScreen === true){
+            dispatch(toggleTeamNewsScreen())
+        }
+        if(scorebookScreen === true){
+            dispatch(toggleScorebookScreen())
         }
     }
 
-    toggleThemeMenu = () => {
-        const changeTheme = document.querySelector(".theme-container");
-        if(this.state.themeToggle === true) {
-            changeTheme.classList.add("active")
-            this.setState({
-                themeToggle: false
-            })
-        } else {
-            changeTheme.classList.remove("active")
-            this.setState({
-                themeToggle: true
-            })
-        }
-    }
-
-    setThemeState = (themeName) => {
-        this.setState({
-            theme: themeName
-        })
-        console.log(this.state.theme)
-        console.log(themeName)
-    }
-
-    render() {
     return (
         <div>
-            <Theme 
-            toggleThemeMenu={this.toggleThemeMenu}
-            themeToggle={this.state.themeToggle}
-            theme={this.state.theme}
-            setThemeState={this.setThemeState}
-            />
         <div className="header-container">
             {/* Logo container */}
             <div className="logo">
@@ -51,45 +55,43 @@ class Header extends Component {
             </div>
             {/* Theme button for mobile */}
             <div className="theme-mobile">
-                <button onClick={this.toggleThemeMenu}><i class="fas fa-tint"></i></button>
+                <button onClick={() => dispatch(toggleThemeScreen())}><i class="fas fa-tint"></i></button>
             </div>
             <div className="match-details">
                 <div className="team-details">
                 <div className="team-info">
-                <p className="batting-icon">{this.props.isBatting === true ? <GiCricketBat />  : null}</p>
-                <h4>{this.props.homeName.length > 0 ? this.props.homeName : "Home Team"}</h4>
+                <p className="batting-icon">{battingTeam === false ? <GiCricketBat />  : null}</p>
+                <h4>{homeTeamName.length > 0 ? homeTeamName : "Home Team"}</h4>
                 </div>
                 <div className="versus">
                 <p>vs.</p>
                 </div>
                 <div className="team-info">
-                <h4>{this.props.awayName.length > 0 ? this.props.awayName : "Away Team"}</h4>
-                <p className="batting-icon">{this.props.isBatting === false ? <GiCricketBat />  : null}</p>
+                <h4>{awayTeamName.length > 0 ? awayTeamName : "Away Team"}</h4>
+                <p className="batting-icon">{battingTeam === true ? <GiCricketBat />  : null}</p>
                 </div>
                 </div>
                 <div className="other-details">
                 <div className="format">
                     <p>Format: </p>
-                    <p>{this.props.format}</p>
+                    <p>{format}</p>
                 </div>
                 <div className="venue">
                     <p>Venue: </p>
-                    <p>{this.props.venue}</p>
+                    <p>{venue}</p>
                 </div>
                 <div className="toss-winner">
                     <p>Toss won by: </p>
-                    <p>{this.props.toss}</p>
+                    <p>{toss}</p>
                 </div>
                 </div>
             </div>
             <div className="header-buttons">
-                <button className="header-btn" onClick={this.props.handleTeamScreen}>Team News</button>
-                <button className="header-btn" onClick={this.toggleThemeMenu}>Theme</button>
-                <button className="header-btn" id="scorebook-btn" onClick={this.props.changeScreen}>Scorebook</button>
+                <button className="header-btn" onClick={handleTeamNewsScreen}>Team News</button>
+                <button className="header-btn" onClick={handleThemeScreen}>Theme</button>
+                <button className="header-btn" id="scorebook-btn" onClick={handleScorebookScreen}>Scorebook</button>
             </div>
         </div>
         </div>
     )}
-}
 
-export default Header

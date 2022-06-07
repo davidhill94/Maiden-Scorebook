@@ -4,9 +4,9 @@
     background-color: var(--secondary);
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 98vh;
     width: 80%;
-    z-index: 1;
+    z-index: 100;
     position: absolute;
     top: 0;
     padding: 8px;
@@ -32,7 +32,7 @@
 }
 
 .batsman-list {
-    font-size: 0.9vw;
+    font-size: 0.8rem;
 }
 
 .batsman-list ul {
@@ -86,7 +86,6 @@
 .scorebook-totals-container {
     display: flex;
     width: 95%;
-    font-size: 12px;
     border: 2px solid #000;
 }
 
@@ -103,6 +102,7 @@
     align-items: center;
     font-size: 0.8vw;
     background-color: #fff;
+    font-size: 0.7rem;
 }
 
 .dismissal-columns-title {
@@ -117,7 +117,7 @@
     border: 1px solid #000;
     align-items: center;
     justify-content: space-evenly;
-    font-size: 0.8vw;
+    font-size: 0.8rem;
     background-color: #fff;
 }
 
@@ -148,7 +148,7 @@
 .scorebook-bowling-container {
     display: flex;
     width: 95%;
-    font-size: 0.9vw;
+    font-size: 0.8rem;
     margin-top: 6px;
 }
 
@@ -194,13 +194,6 @@
 /**** Screen Size Responsive ****/
 
 @media screen and (max-width: 960px) {
-    .scorebook-totals-container,
-    .scorebook-extras-container,
-    .scorecard-totals,
-    .scorebook-bowling-container,
-    .batsman-list {
-        font-size: 12px;
-    }
 
     .scorecard-totals-column {
         display: flex;
@@ -215,7 +208,7 @@
 
 @media screen and (max-width: 768px) {
     .scorebook-container {
-        min-height: 145vh;
+        min-height: 100vh;
         justify-content: start;
         width: 100%;
         gap: 3vh;
@@ -229,12 +222,13 @@
     }
     .scorebook-bowling-container {
         padding-bottom: 10px;
+        font-size: 0.7rem;
     }
 
     .batsman-list,
     .scorebook-extras-container h4,
-    .scorebook-extras-container p {
-        font-size: 1.4vw;
+    .scorebook-extras-container p{
+        font-size: 0.7rem;
     }
 
     .batsman-row {
@@ -263,7 +257,7 @@
     .dismissal-container {
         width: 100%;
         line-height: 18px;
-        font-size: 1.4vw;
+        font-size: 0.7rem;
     }
 
     .scorebook-extras-container {
@@ -273,6 +267,7 @@
     .scorecard-totals {
         width: 40%;
         padding: 0px;
+        font-size: 0.7rem;
     }
 
     .extras-item, 
@@ -288,26 +283,28 @@
     }
 
     .close-scorebook button {
-        font-size: 10px;
-        padding: 2px;
+        font-size: 0.8rem;
+        padding: 3px;
         background-color: var(--button);
         color: var(--button-font);
+        border: 1px solid var(--button-font);
     }
 }
 
 @media screen and (max-width: 500px) {
     .scorebook-container {
-        min-height: 125vh;
+        min-height: 100vh;
     }
 
     .batsman-list,
     .batsman-titles,
     .scorebook-totals-container,
     .dismissal-container,
-    .scorebook-extras-container,
+    .scorebook-extras-container h4,
+    .scorebook-extras-container p,
     .scorecard-totals,
     .scorebook-bowling-container  {
-        font-size: 8px;
+        font-size: 0.55rem;
     }
 
     .batsman-list,

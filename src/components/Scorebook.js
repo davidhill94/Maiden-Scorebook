@@ -1,20 +1,40 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Scorebook.css';
 import './Header';
+import { toggleScorebookScreen } from '../actions/Pages';
+import { useDispatch, useSelector } from 'react-redux';
 
-class Scorebook extends Component {
+export default function Scorebook() {
 
-    render() {
+const dispatch = useDispatch();
+const totalRuns = useSelector(state => state.totalRuns);
+const overs = useSelector(state => state.overs);
+const balls = useSelector(state => state.balls);
+const awayTeam = useSelector(state => state.awayTeam);
+const homeTeam = useSelector(state => state.homeTeam);
+const battingTeam = useSelector(state => state.battingTeam);
+const totalExtras = useSelector(state => state.totalExtras);
+const wides = useSelector(state => state.wides);
+const noBalls = useSelector(state => state.noBalls);
+const byes = useSelector(state => state.byes);
+const legByes = useSelector(state => state.legByes);
+const penaltyRuns = useSelector(state => state.penalty);
+const wickets = useSelector(state => state.wickets);
+const batsmanAtWicket = useSelector(state => state.batsmanAtWicket);
+const wicketArr = useSelector(state => state.wicketArr);
+const bowlingArr = useSelector(state => state.bowlingArr);
+
+
     return (
         <div className="scorebook-container">
             <div className="close-scorebook">
-                <button onClick={this.props.changeScreen}>Back to Scoreboard</button>
+                <button onClick={() => dispatch(toggleScorebookScreen())}>Back to Scoreboard</button>
             </div>
 
             {/* Handles displaying batting details */}
             <div className="scorebook-batting-container">
                 
-                {this.props.isBatting === true
+                {battingTeam === false
 
                 ?
 
@@ -27,7 +47,7 @@ class Scorebook extends Component {
                 <h4 className="batsman-runs-header">Runs</h4>
                 <h4 className="batsman-balls-header">Balls</h4>
                 </div>
-                    {this.props.homePlayers.map(
+                    {homeTeam.map(
                         (person, num) => {
                             return (
                                 <div className="batsman-row">
@@ -53,7 +73,7 @@ class Scorebook extends Component {
                 <h4 className="batsman-runs-header">Runs</h4>
                 <h4 className="batsman-balls-header">Balls</h4>
                 </div>
-                    {this.props.awayPlayers.map(
+                    {awayTeam.map(
                         (person, num) => {
                             return (
                                 <div className="batsman-row">
@@ -80,53 +100,53 @@ class Scorebook extends Component {
                     </div>
                     <div className="dismissal-columns">
                         <h4>1</h4>
-                        <p>{this.props.batsmanAtWicket.length === 1 ? "-" : this.props.batsmanAtWicket[1]}</p>
-                        <p>{this.props.wicketArr.length === 1 ? 0 : this.props.wicketArr[1]}</p>
+                        <p>{batsmanAtWicket.length >= 1 ? batsmanAtWicket[0] : "-"}</p>
+                        <p>{wicketArr.length >= 1 ? wicketArr[0] : 0}</p>
                     </div>
                     <div className="dismissal-columns">
                         <h4>2</h4>
-                        <p>{this.props.batsmanAtWicket.length <= 2 ? "-" : this.props.batsmanAtWicket[2]}</p>
-                        <p>{this.props.wicketArr.length <= 2 ? 0 : this.props.wicketArr[2]}</p>
+                        <p>{batsmanAtWicket.length >= 2 ? batsmanAtWicket[1] : "-"}</p>
+                        <p>{wicketArr.length >= 2 ? wicketArr[1] : 0}</p>
                     </div>
                     <div className="dismissal-columns">
                         <h4>3</h4>
-                        <p>{this.props.batsmanAtWicket.length <= 3 ? "-" : this.props.batsmanAtWicket[3]}</p>
-                        <p>{this.props.wicketArr.length <= 3 ? 0 : this.props.wicketArr[3]}</p>
+                        <p>{batsmanAtWicket.length >= 3 ? batsmanAtWicket[2] : "-"}</p>
+                        <p>{wicketArr.length >= 3 ? wicketArr[2] : 0}</p>
                     </div>
                     <div className="dismissal-columns">
                         <h4>4</h4>
-                        <p>{this.props.batsmanAtWicket.length <= 4 ? "-" : this.props.batsmanAtWicket[4]}</p>
-                        <p>{this.props.wicketArr.length <= 4 ? 0 : this.props.wicketArr[4]}</p>
+                        <p>{batsmanAtWicket.length >= 4 ? batsmanAtWicket[3] : "-"}</p>
+                        <p>{wicketArr.length >= 4 ? wicketArr[3] : 0}</p>
                     </div>
                     <div className="dismissal-columns">
                         <h4>5</h4>
-                        <p>{this.props.batsmanAtWicket.length <= 5 ? "-" : this.props.batsmanAtWicket[5]}</p>
-                        <p>{this.props.wicketArr.length <= 5 ? 0 : this.props.wicketArr[5]}</p>
+                        <p>{batsmanAtWicket.length >= 5 ? batsmanAtWicket[4] : "-"}</p>
+                        <p>{wicketArr.length >= 5 ? wicketArr[4] : 0}</p>
                     </div>
                     <div className="dismissal-columns">
                         <h4>6</h4>
-                        <p>{this.props.batsmanAtWicket.length <= 6 ? "-" : this.props.batsmanAtWicket[6]}</p>
-                        <p>{this.props.wicketArr.length <= 6 ? 0 : this.props.wicketArr[6]}</p>
+                        <p>{batsmanAtWicket.length >= 6 ? batsmanAtWicket[5] : "-"}</p>
+                        <p>{wicketArr.length >= 6 ? wicketArr[5] : 0}</p>
                     </div>
                     <div className="dismissal-columns">
                         <h4>7</h4>
-                        <p>{this.props.batsmanAtWicket.length <= 7 ? "-" : this.props.batsmanAtWicket[7]}</p>
-                        <p>{this.props.wicketArr.length <= 7 ? 0 : this.props.wicketArr[7]}</p>
+                        <p>{batsmanAtWicket.length >= 7 ? batsmanAtWicket[6] : "-"}</p>
+                        <p>{wicketArr.length >= 7 ? wicketArr[6] : 0}</p>
                     </div>
                     <div className="dismissal-columns">
                         <h4>8</h4>
-                        <p>{this.props.batsmanAtWicket.length <= 8 ? "-" : this.props.batsmanAtWicket[8]}</p>
-                        <p>{this.props.wicketArr.length <= 8 ? 0 : this.props.wicketArr[8]}</p>
+                        <p>{batsmanAtWicket.length >= 8 ? batsmanAtWicket[7] : "-"}</p>
+                        <p>{wicketArr.length >= 8 ? wicketArr[7] : 0}</p>
                     </div>
                     <div className="dismissal-columns">
                         <h4>9</h4>
-                        <p>{this.props.batsmanAtWicket.length <= 9 ? "-" : this.props.batsmanAtWicket[9]}</p>
-                        <p>{this.props.wicketArr.length <= 9 ? 0 : this.props.wicketArr[9]}</p>
+                        <p>{batsmanAtWicket.length >= 9 ? batsmanAtWicket[8] : "-"}</p>
+                        <p>{wicketArr.length >= 9 ? wicketArr[8] : 0}</p>
                     </div>
                     <div className="dismissal-columns">
                         <h4>10</h4>
-                        <p>{this.props.batsmanAtWicket.length <= 10 ? "-" : this.props.batsmanAtWicket[10]}</p>
-                        <p>{this.props.wicketArr.length <= 10 ? 0 : this.props.wicketArr[10]}</p>
+                        <p>{batsmanAtWicket.length >= 10 ? batsmanAtWicket[9] : "-"}</p>
+                        <p>{wicketArr.length >= 10 ? wicketArr[9] : 0}</p>
                     </div>
                 </div>
                 <div className="extras-totals-combined">
@@ -135,31 +155,31 @@ class Scorebook extends Component {
                     <div className="extras-row">
                         <div className="extras-item">
                         <h4>Extras</h4>
-                        <p>{this.props.extrasTotal}</p>
+                        <p>{totalExtras}</p>
                         </div>
                         <div className="extras-item">
                         <h4>Penalty</h4>
-                        <p>{this.props.penaltyRuns}</p>
+                        <p>{penaltyRuns}</p>
                         </div>
                     </div>
                     <div className="extras-row">
                     <div className="extras-item">
                         <h4>Byes</h4>
-                        <p>{this.props.byes}</p>
+                        <p>{byes}</p>
                         </div>
                         <div className="extras-item">
                         <h4>Leg Byes</h4>
-                        <p>{this.props.legByes}</p>
+                        <p>{legByes}</p>
                     </div>
                     </div>
                     <div className="extras-row">
                         <div className="extras-item">
                         <h4>Wides</h4>
-                        <p>{this.props.wides}</p>
+                        <p>{wides}</p>
                         </div>
                         <div className="extras-item">
                         <h4>No Balls</h4>
-                        <p>{this.props.noBalls}</p>
+                        <p>{noBalls}</p>
                         </div>
                     </div>
                 </div>
@@ -169,21 +189,21 @@ class Scorebook extends Component {
                     <div className="scorecard-totals-column">
                         <div>
                         <h4>Total</h4>
-                        <p>{this.props.totalRuns}</p>
+                        <p>{totalRuns}</p>
                         </div>
                         <div>
                         <h4>Wickets</h4>
-                        <p>{this.props.wickets}</p>
+                        <p>{wickets}</p>
                         </div>
                     </div>
                     <div className="scorecard-totals-column">
                         <div>
                         <h4>Overs</h4>
-                        <p>{this.props.overs.toFixed(1)}</p>
+                        <p>{overs.toFixed(1)}</p>
                         </div>
                         <div>
                         <h4>Run Rate</h4>
-                        <p>{(this.props.balls === 0 ? 0 : (this.props.totalRuns / (this.props.balls / 6)).toFixed(2))}</p>
+                        <p>{(balls === 0 ? 0 : (totalRuns / (balls / 6)).toFixed(2))}</p>
                         </div>
                     </div>
                 </div>
@@ -202,7 +222,7 @@ class Scorebook extends Component {
                     <h4 className="bowler-figures-header">Economy</h4>
                     <h4 className="bowler-figures-header">SR</h4>
                     </div>
-            {this.props.bowlingArr.map(
+            {bowlingArr.map(
                         (person) => {
                             return (
                                 <div className="bowler-figures">
@@ -219,7 +239,5 @@ class Scorebook extends Component {
             </ul>
             </div>
         </div>
-    )}
-}
-
-export default Scorebook
+    )
+                            }

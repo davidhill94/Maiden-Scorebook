@@ -10,6 +10,7 @@
     color: var(--primary);
     position: relative;
     overflow: hidden;
+    z-index: 1;
 }
 
 .logo {
@@ -41,7 +42,7 @@
 .team-info {
     display: flex;
     gap: 0px;
-    font-size: 2.6vw;
+    font-size: 2rem;
     justify-content: space-around;
     align-items: center;
     white-space: nowrap;
@@ -78,7 +79,7 @@
 .venue,
 .toss-winner,
 .format {
-    font-size: 1.5vw;
+    font-size: 1rem;
 }
 
 .header-buttons {
@@ -99,7 +100,7 @@
     margin: 3px 0px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1vw;
+    font-size: 0.6rem;
     background-color: #fff;
     color: #000;
 }
@@ -111,40 +112,14 @@
 
 @media screen and (max-width: 960px) {
     .team-info {
-        font-size: 2.2vw;
+        font-size: 1.5rem;
     }
     .other-details {
         gap: 5vw;
     }
 }
- 
-@media screen and (max-width: 768px) {
-    .team-info {
-        font-size: 2.2vw;
-        width: 20vw;
-    }
-    .other-details {
-        gap: 10vw;
-    }
-    .logo {
-        height: 60px;
-        width: 60px;
-    }
-    .venue,
-    .toss-winner,
-    .format {
-        font-size: 2vw;
-    }
-    .header-buttons {
-        top: 2vh;
-    }
-    .header-buttons .header-btn {
-        font-size: 10px;
-        margin-left: 2px;
-    }
-}
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
     .header-container {
         border-bottom: none;
     }
@@ -156,7 +131,7 @@
         display: none;
     }
     .team-info {
-        font-size: 3.8vw;
+        font-size: 1.1rem;
         gap: 2px;
         width: 100%;
     }
@@ -168,7 +143,7 @@
     .versus {
         margin: 0 6px;
         width: 15%;
-        font-size: 3.8vw;
+        font-size: 1rem;
     }
     .batting-icon {
         margin: 0px;
@@ -179,7 +154,8 @@
     .venue,
     .toss-winner,
     .format {
-        font-size: 3.4vw;
+        font-size: 1rem;
+        margin: 0 1.4rem;
     }
     .change-theme {
         display: none;
@@ -194,6 +170,7 @@
         position: absolute;
         top: 0;
         right: 0.2vw;
+        border: none;
     }
     .theme-mobile button {
         padding: 6px;
@@ -202,5 +179,18 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        border: 2px solid #000;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .team-info {
+        font-size: 1rem
+    }
+    .venue,
+    .toss-winner,
+    .format {
+        font-size: 0.8rem;
+        margin: 0 0.8rem
     }
 }
