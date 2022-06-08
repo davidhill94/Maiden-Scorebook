@@ -8,7 +8,7 @@ export const resetAwayTeam = () => {
 
 export const resetHomeTeam = () => {
     return {
-        type: "RESET_TEAM_NAME"
+        type: "RESET_HOME_TEAM"
     }
 }
 
