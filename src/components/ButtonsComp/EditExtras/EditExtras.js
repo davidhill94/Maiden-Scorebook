@@ -95,7 +95,7 @@ const autoCloseMobileButtons = () => {
                     </div>
                 </div>
             </div>
-            <button className="button-confirm-btn" onClick={() => {dispatch(handleEditExtrasToggle()); autoCloseMobileButtons()}}>Close</button>
+            <button className="closeConfirm" onClick={() => {dispatch(handleEditExtrasToggle()); autoCloseMobileButtons()}}>Close</button>
         </div>
 
     )

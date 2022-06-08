@@ -30,6 +30,10 @@
     transition: 0.2s ease-out;
 }
 
+.confirm-btn{
+    cursor: pointer;
+}
+
 .team-news-inner-container {
     display: flex;
     flex-direction: column;
@@ -164,6 +168,7 @@
     z-index: 0;
     border-radius: 4px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .player-column button.active:hover {
@@ -296,6 +301,7 @@
         width: 24px;
         font-size: 0.8rem;
         overflow: hidden;
+        cursor: pointer;
     }
 
     .player-column {
@@ -310,12 +316,14 @@
     .change-toss.active button,
     .confirm-btn {
         width: 60%;
+        cursor: pointer;
     }
 
     .change-venue.active input,
     .change-venue.active button {
         width: 70%;
         font-size: 1.6rem;
+        cursor: pointer;
     }
 
     .team-news-btns .edit-team-news-btn,
